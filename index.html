@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="VL-SGR — AI 기반 대학생 영어독해 학습 웹앱. Vocabulary, Listening, Speaking, Grammar, Reading 5개 영역 통합 학습." />
+  <meta name="theme-color" content="#2563EB" />
+  <title>VL-SGR — AI English Learning</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/reset.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+<body>
+
+<!-- 모바일 헤더 -->
+<header class="mobile-header" id="mobileHeader">
+  <button class="hamburger-btn" id="hamburgerBtn" aria-label="메뉴 열기" aria-expanded="false">
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+  </button>
+  <div class="mobile-logo">
+    <span class="mobile-logo-vl">VL</span>-<span class="mobile-logo-sgr">SGR</span>
+  </div>
+  <div class="mobile-header-spacer"></div>
+</header>
+
+<!-- 모바일 오버레이 -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+<!-- 앱 컨테이너 -->
+<div class="app-container">
+
+  <!-- 사이드바 -->
+  <aside class="sidebar" id="sidebar" role="navigation" aria-label="주 메뉴">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">
+        <span class="logo-vl">VL</span>-<span class="logo-sgr">SGR</span>
+      </div>
+      <div class="sidebar-tagline">AI English Learning</div>
+    </div>
+
+    <nav class="sidebar-nav" id="sidebarNav">
+      <!-- app.js에서 동적으로 채워짐 -->
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="sidebar-footer-text">브라우저에 학습 데이터 저장</div>
+    </div>
+  </aside>
+
+  <!-- 메인 콘텐츠 -->
+  <main class="main-content" id="mainContent">
+    <div class="content-area" id="contentArea">
+      <!-- 라우터가 각 화면을 여기에 렌더링 -->
+      <div class="loading-state">
+        <div class="loading-spinner"></div>
+        <p>VL-SGR을 불러오는 중...</p>
+      </div>
+    </div>
+  </main>
+
+</div><!-- /app-container -->
+
+<!-- 서드파티 문서 파싱 라이브러리 (PDF.js, Mammoth.js) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+
+<!-- JavaScript — 의존성 순서대로 로드 -->
+<script src="assets/js/storage.js"></script>
+<script src="assets/js/file-extractor.js"></script>
+<script src="assets/js/speech.js"></script>
+<script src="assets/js/ai-client.js"></script>
+<script src="data/default-passages.js"></script>
+<script src="assets/js/dashboard.js"></script>
+<script src="assets/js/passages.js"></script>
+<script src="assets/js/vocabulary.js"></script>
+<script src="assets/js/listening.js"></script>
+<script src="assets/js/speaking.js"></script>
+<script src="assets/js/grammar.js"></script>
+<script src="assets/js/reading.js"></script>
+<script src="assets/js/integrated-learning.js"></script>
+<script src="assets/js/results.js"></script>
+<script src="assets/js/my-learning.js"></script>
+<script src="assets/js/project-info.js"></script>
+<script src="assets/js/settings.js"></script>
+<script src="assets/js/router.js"></script>
+<script src="assets/js/app.js"></script>
+
+</body>
+</html>
