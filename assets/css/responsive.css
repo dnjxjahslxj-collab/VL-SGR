@@ -1,0 +1,289 @@
+/* ============================================================
+   responsive.css — VL-SGR Responsive Media Queries
+   Breakpoints: tablet ≤ 1024px | mobile ≤ 768px | small ≤ 480px
+   ============================================================ */
+
+/* ──────────────────────────────────────────────
+   1. Tablet  (max-width: 1024px)
+   ────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+
+  /* Narrow the sidebar */
+  :root {
+    --sidebar-width: 220px;
+  }
+
+  /* Stats: 2 columns */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Learning areas: 3 columns */
+  .learning-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Quick start: 2 columns */
+  .quick-start-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Content area: tighter max-width */
+  .content-area {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+
+  /* Page header: stack on smaller screens */
+  .page-header {
+    flex-wrap: wrap;
+  }
+}
+
+/* ──────────────────────────────────────────────
+   2. Mobile  (max-width: 768px)
+   ────────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* Sidebar: off-canvas */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    transform: translateX(-100%);
+    z-index: 1000;
+    box-shadow: var(--shadow-lg);
+    width: var(--sidebar-width) !important; /* override :root token change */
+  }
+
+  .sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+
+  /* Mobile overlay backdrop */
+  .mobile-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgb(0 0 0 / 0.45);
+    z-index: 999;
+    display: none;
+  }
+
+  .mobile-overlay.active {
+    display: block;
+  }
+
+  /* Main content: no left margin */
+  .main-content {
+    margin-left: 0;
+  }
+
+  /* Show mobile header */
+  .mobile-header {
+    display: flex;
+  }
+
+  /* Stats: 2 columns */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Learning areas: 2 columns */
+  .learning-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Quick start: 2 columns */
+  .quick-start-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Content area: compact padding */
+  .content-area {
+    padding: 1rem;
+  }
+
+  /* Cards: smaller padding */
+  .card {
+    padding: 1rem;
+  }
+
+  /* Modal: full-width on mobile */
+  .modal {
+    max-width: 100%;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    margin-top: auto;
+  }
+
+  .modal-overlay {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  /* Tabs: allow scroll */
+  .tab-list {
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .tab-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Page header: stack */
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .page-title {
+    font-size: 1.25rem;
+  }
+
+  /* Recent item hover: disable on touch */
+  .recent-item:hover {
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+    background: transparent;
+  }
+}
+
+/* ──────────────────────────────────────────────
+   3. Small Mobile  (max-width: 480px)
+   ────────────────────────────────────────────── */
+@media (max-width: 480px) {
+
+  /* Stats: 1 column */
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Learning areas: 2 columns (maintained) */
+  .learning-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Quick start: 1 column */
+  .quick-start-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Buttons: touch-friendly height */
+  .btn {
+    min-height: 44px;
+    padding: 0.625rem 1rem;
+  }
+
+  .btn-sm {
+    min-height: 36px;
+  }
+
+  /* Form inputs: touch-friendly */
+  .form-input,
+  .form-select,
+  .form-textarea {
+    min-height: 44px;
+    font-size: 1rem; /* prevents iOS zoom on focus */
+  }
+
+  /* Typography adjustments */
+  .page-title {
+    font-size: 1.125rem;
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
+  }
+
+  /* Learning card: horizontal layout on tiny screens */
+  .learning-card {
+    flex-direction: row;
+    text-align: left;
+    padding: 0.875rem;
+  }
+
+  .learning-card-icon {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+  }
+
+  .learning-card-label {
+    font-size: 0.8125rem;
+  }
+
+  /* Sidebar: full-width on very small screens */
+  .sidebar {
+    width: 100% !important;
+    max-width: 300px;
+  }
+
+  /* Card: minimal padding */
+  .card {
+    padding: 0.875rem;
+  }
+
+  .card-header,
+  .card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  /* Alert: adjust padding */
+  .alert {
+    padding: 0.75rem;
+    font-size: 0.8125rem;
+  }
+
+  /* Tab buttons: smaller text */
+  .tab-btn {
+    font-size: 0.8125rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  /* Content: minimal padding */
+  .content-area {
+    padding: 0.75rem;
+  }
+
+  /* Utility overrides for small screens */
+  .hide-sm {
+    display: none !important;
+  }
+
+  .show-sm {
+    display: flex !important;
+  }
+}
+
+/* ──────────────────────────────────────────────
+   4. Print
+   ────────────────────────────────────────────── */
+@media print {
+  .sidebar,
+  .mobile-header,
+  .hamburger-btn,
+  .mobile-overlay,
+  .btn {
+    display: none !important;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .content-area {
+    padding: 0;
+  }
+
+  .card {
+    box-shadow: none;
+    border: 1px solid #CBD5E1;
+    break-inside: avoid;
+  }
+}

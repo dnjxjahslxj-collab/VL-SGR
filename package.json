@@ -1,0 +1,15 @@
+{
+  "name": "vl-sgr",
+  "version": "1.0.0",
+  "description": "VL-SGR - AI-based English Reading Comprehension Web App for University Students",
+  "private": true,
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "echo 'Static web app: ready for Netlify'"
+  },
+  "author": "VL-SGR Team",
+  "license": "MIT"
+}
+
